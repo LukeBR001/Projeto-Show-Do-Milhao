@@ -6,74 +6,93 @@
     <title>Show do Milhão</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="mostrarQuestao()">
+    <audio id="comecarJogo" src="/audio/vai-comecar.mp3" autoplay></audio>
+
+    <audio id="tema" src="/audio/tema-abertura.mp3" autoplay loop></audio>
+    <audio id="perguntaUm" src="" autoplay></audio>
+    <audio id="perguntaDois" src="" autoplay></audio>
+    <audio id="perguntaTres" src="" autoplay></audio>
+    <audio id="perguntaMilhao" src="" autoplay></audio>
+    <audio id="vocePerdeu" src="" autoplay ></audio>
+    <audio id="voceGanhou" src="" autoplay></audio>
+    <audio id="voceAcertou" src="" autoplay></audio>
+    <audio id="errou" src="" autoplay></audio>
+    <audio id="boaSorte" src="" autoplay></audio>
+    
+
     <header>
-        <input type="button" value="Parar" id="pararJogo">
+        <a href="inicio.html"><input type="button" value="Menu" id="pararJogo"></a>&nbsp;&nbsp;<!--
+        <input type="button" value="Parar" id="pararJogo">&nbsp;&nbsp;
+        <input type="button" value="Ajuda" id="pararJogo"> -->
+        <input type="button" value="Próxima Pergunta&#10140" id="proxPergunta" onclick="mostrarQuestao()">
     </header>
     <div id="base">
         <img src="/img/logo.png" width="250px">
         <div>
-            <h2 id="perguntas">COM QUANTOS PAUS SE FAZ UMA CANOA? KK</h2>
+            <h2 id="perguntas">lala</h2>
         </div>
-        <div class="respostasstyle" id="1">
+        <div class="respostasstyle divs" id="1" onclick="respondeu(this)">
             <div id="respostas">
-                <p>Lorem ipsum dolo</p>
+                <p id="opt1"></p>
                 <div id="numero">
                     <b><p>1</p></b>
-                    <input id="1" type="button" value="" onclick="respondeu1()">
                 </div>
             </div>
         </div>
         <br>
-        <div class="respostasstyle 2">
+        <div class="respostasstyle divs" id="2" onclick="respondeu(this)">
             <div id="respostas">
-                <p>Sed ut perspiciatis und</p>
+                <p id="opt2"></p>
                 <div id="numero">
                     <b><p>2</p></b>
-                    <input id="2" type="button" value="" onclick="respondeu2()">
                 </div>
             </div>
         </div>
         <br>
-        <div class="respostasstyle 3">
+        <div class="respostasstyle divs" id="3" onclick="respondeu(this)">
             <div id="respostas">
-                <p>But I must explain</p>
+                <p id="opt3"></p>
                 <div id="numero">
                     <b><p>3</p></b>
-                    <input id="3" type="button" value="" onclick="respondeu3()">
                 </div>
             </div>
         </div>
         <br>
-        <div class="respostasstyle 4">
+        <div class="respostasstyle divs" id="4" onclick="respondeu(this)">
             <div id="respostas">
-                <p>Nor again is there anyone</p>
+                <p id="opt4"></p>
                 <div id="numero">
                     <b><p>4</p></b>
-                    <input id="4" type="button" value="" onclick="respondeu4()">
                 </div>
             </div>
         </div>
-        <div id="errar" class="premio">
-            <b><p id="errar">0</p></b>
-            <i> <b><p id="linhaErrar">ERRAR</p></b></i>
+        
+            <div id="errar" class="premio">
+                <b><p id="errarP" >0</p></b>
+                <i> <b><p id="linhaErrar">ERRAR</p></b></i>
+            </div>
+            <div id="parar" class="premio">
+                <b><p id="pararP">0</p></b>
+                <i><b><p id="linhaErrar">PARAR</p></b></i>
+            </div>
+            <div id="acertar" class="premio">
+                <b><p id="acertarP">1 MIL</p></b>
+                <i><b><p id="linhaAcertar">ACERTAR</p></b></i>
+            </div>
+        
+        <div id="resultado"> 
+            <h2 id="res"></h2>  
         </div>
-        <div id="parar" class="premio">
-            <b><p id="errar">0</p></b>
-            <i><b><p id="linhaErrar">PARAR</p></b></i>
-        </div>
-        <div id="acertar" class="premio">
-            <b><p id="errar">1 MIL</p></b>
-            <i><b><p id="linhaAcertar">ACERTAR</p></b></i>
-        </div>
-
-        <div id="res"> <h2>Você Errou !!!</h2>  </div>
-        <div id="imgRes">
-            <img src="/img/silvio-cara-seria.png"> 
+        <div id="imagens">
+            <img id="resImg" src="">
+            <img id="resImg2" src="">
+            <img id="resImg3" src="">
+            <img id="resImgMilhao" src="" >
+            <img id="perdeuTudo" src="" >
         </div>
     </div>
-    
-
     <script src="script.js"></script>
+    <script src="perguntas.js"></script>
 </body>
 </html>
