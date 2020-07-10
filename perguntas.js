@@ -1,3 +1,4 @@
+//resolvi separar as perguntas pq ia consumir muitas linhas de codigo//
 var questoes = [
     {
         pergunta: 'Qual é o signo do zodíaco de quem nasce no dia do ano-novo?',
